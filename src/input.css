@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-raleway
+    }
+    .container {
+        @apply w-full mx-auto px-1;
+    }
+    .header__nav li {
+        @apply border-r border-black/10 uppercase p-2;
+    }
+    .toggle__menu {
+        @apply flex flex-col gap-[3px] lg:hidden;
+    }
+    .toggle__menu span {
+        @apply content-["*"] h-[3px] w-5 bg-black/90;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-6 rounded-md py-2; 
+    }
+    .btn.bg-outline {
+        @apply border-2 border-black/90 py-[10px] bg-buttonyellow text-white lg:bg-transparent lg:text-black/90;
+    }
+    .btn.bg-yelloww {
+        @apply bg-buttonyellow border-2 border-buttonyellow text-white;
+    }
+    .btn.bg-bluee {
+        @apply bg-buttonblue border-2 border-buttonblue text-white hover:bg-fbHover;
+    }
+
+}
