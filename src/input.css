@@ -1,39 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply font-raleway
-    }
-    .container {
-        @apply w-full mx-auto px-1;
-    }
-    .header__nav li {
-        @apply border-r border-black/10 uppercase p-2;
-    }
-    .toggle__menu {
-        @apply flex flex-col gap-[3px] lg:hidden;
-    }
-    .toggle__menu span {
-        @apply content-["*"] h-[3px] w-5 bg-black/90;
-    }
+  body {
+    @apply font-raleway;
+  }
+  body.open {
+    @apply overflow-hidden
+  }
+  .container {
+    @apply w-full mx-auto px-[15px] lg:px-[13px];
+  }
+  h1 {
+    @apply text-[38.4px] md:text-[46.38px] lg:text-[80px] mb-[96px] font-[100];
+  }
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+  h3 {
+    @apply text-base lg:text-lg font-semibold;
+  }
+  p {
+    @apply text-base
+  }
+  .header__nav li {
+    @apply lg:border-r-2 lg:border-black/10 uppercase p-2;
+  }
+  .header__panel {
+    @apply grid lg:grid-cols-[auto_auto] gap-5 pt-[13px] items-center lg:py-0 lg:grid-rows-[93.25px_auto] lg:col-span-full lg:row-start-1 lg:col-start-1 lg:gap-0 lg:static lg:p-0 w-full fixed top-[94px] right-[-100%] duration-500 lg:pb-0 pb-[100%] bg-white z-40;
+  }
+  .header__panel.open {
+    @apply right-0 overflow-y-hidden;
+  }
+  .toggle__menu {
+    @apply flex flex-col gap-[4px] lg:hidden duration-500;
+  }
+  .toggle__menu span {
+    @apply content-["*"] h-[4px] w-[38px] bg-black/90 duration-500;
+  }
+  .toggle__menu.open {
+    @apply gap-0 rotate-180 opacity-90;
+  }
+  .toggle__menu.open span:first-child {
+    @apply w-6 h-[6px] rotate-[-33deg] bg-black rounded-xl;
+  }
+  .toggle__menu.open span:nth-child(2) {
+    @apply h-[6px] bg-black rounded-xl;
+  }
+  .toggle__menu.open span:last-child {
+    @apply w-6 h-[6px] rotate-[33deg] bg-black rounded-xl;
+  }
+  .FAQ__category {
+    @apply text-xl my-3;
+  }
+  .FAQ__category.active {
+    @apply text-primary underline;
+  }
+  .FAQ__content {
+    @apply hidden
+  }
+  .FAQ__content.active {
+    @apply block
+  }
+  .FAQ__item {
+    @apply grid p-3 mb-4 bg-secondary;
+  }
+  .FAQ__item h3 {
+    @apply grid grid-cols-[80%_auto] lg:grid-cols-[auto_auto_1fr] items-center;
+  }
+  .FAQ__item span {
+    @apply hidden text-2xl mr-5 lg:inline;
+  }
+  .FAQ__item h3 i {
+    @apply rotate-180 justify-self-end duration-500 ease-in-out;
+  }
+  .FAQ__item h3 i.open {
+    @apply rotate-0;
+  }
+  .FAQ__text {
+    @apply h-auto max-h-0 ml-8 overflow-hidden duration-700 ease-in-out;
+  }
+  .FAQ__text.open {
+    @apply max-h-[100rem] my-8;
+  }
+  #FAQ__text-1 {
+    @apply m-0 max-h-full; 
+  }
+  .FAQ__text i {
+    @apply mr-2 duration-500 ease-in-out;
+  }
+  .FAQ__text p {
+    @apply text-justify leading-9;
+  }
 }
 
 @layer components {
-    .btn {
-        @apply px-6 rounded-md py-2; 
-    }
-    .btn.bg-outline {
-        @apply border-2 border-black/90 py-[10px] bg-buttonyellow text-white lg:bg-transparent lg:text-black/90;
-    }
-    .btn.bg-yelloww {
-        @apply bg-buttonyellow border-2 border-buttonyellow text-white;
-    }
-    .btn.bg-bluee {
-        @apply bg-buttonblue border-2 border-buttonblue text-white hover:bg-fbHover;
-    }
-
+  .btn {
+    @apply px-9 lg:px-6 rounded-md py-2;
+  }
+  .btn.bg-primaryy {
+    @apply bg-[#28941e] border border-primary text-white hover:bg-buttonyellow hover:border-buttonyellow px-20 my-2;
+  }
+  .btn.bg-primaryy-outline {
+    @apply bg-transparent border border-primary text-black/90 hover:bg-buttonyellow px-20;
+  }
+  .btn.bg-outline {
+    @apply border border-black/90 py-[9px] bg-buttonyellow text-white lg:border lg:bg-transparent lg:text-black/90 hover:bg-[#28941e] hover:text-white;
+  }
+  .btn.bg-yelloww {
+    @apply bg-buttonyellow border border-buttonyellow text-white;
+  }
+  .btn.bg-bluee {
+    @apply bg-buttonblue border border-buttonblue text-white hover:bg-fbHover;
+  }
 }
