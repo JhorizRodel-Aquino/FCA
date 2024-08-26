@@ -648,6 +648,7 @@ p{
 
 .FAQ__item h3{
   display: grid;
+  cursor: pointer;
   grid-template-columns: 80% auto;
   align-items: center;
 }
