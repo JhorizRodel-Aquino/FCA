@@ -704,10 +704,6 @@ p{
   margin: 0px;
 }
 
-#FAQ__text-1 p{
-  margin-bottom: 0.5rem;
-}
-
 .FAQ__text i{
   margin-right: 0.5rem;
   transition-duration: 500ms;
@@ -715,6 +711,7 @@ p{
 }
 
 .FAQ__text p{
+  margin-bottom: 0.5rem;
   text-align: justify;
   line-height: 2.25rem;
 }
